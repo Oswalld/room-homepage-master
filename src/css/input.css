@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+  @apply text-4xl font-bold text-black;
+}
+
+button {
+  @apply uppercase text-black tracking-[10px] font-medium flex items-center gap-5 hover:text-dark-gray cursor-pointer;
+}
