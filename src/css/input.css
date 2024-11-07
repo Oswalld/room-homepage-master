@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 h2 {
-  @apply text-4xl font-bold text-black;
+  @apply text-5xl font-bold text-black;
+}
+
+h3 {
+  @apply text-lg uppercase font-bold text-black tracking-[10px];
 }
 
 button {

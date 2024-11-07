@@ -19,12 +19,12 @@
 
     <link rel="stylesheet" href="./src/css/output.css" />
   </head>
-  <body class="text-dark-gray font-spartan font-medium">
+  <body class="text-dark-gray font-spartan font-medium text-lg">
     <header
-      class="flex items-center justify-center text-white w-full px-7 py-10 absolute"
+      class="flex items-center justify-center text-white w-full px-10 py-10 absolute"
     >
       <svg
-        class="open-menu absolute left-7"
+        class="open-menu absolute left-10"
         width="20"
         height="14"
         xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
 
       <img src="./src/images/logo.svg" alt="Room logo" />
       <nav
-        class="hidden absolute flex items-center justify-between z-10 px-7 left-0 py-10 w-full bg-white text-black font-bold"
+        class="hidden absolute flex items-center justify-between z-10 px-10 left-0 py-10 w-full bg-white text-black font-bold"
       >
         <svg
           class="close-menu"
@@ -74,7 +74,7 @@
           class="w-full h-full object-cover"
         />
       </picture>
-      <picture>
+      <!-- <picture>
         <source
           media="(min-width: 1024px)"
           srcset="./src/images/desktop-image-hero-2.jpg"
@@ -96,10 +96,11 @@
           alt="Hero image 3"
           class="w-full h-full object-cover"
         />
-      </picture>
+      </picture> -->
     </div>
 
-    <div class="relative py-14 px-7">
+    <div class="relative py-14 px-10">
+      <!-- MODULE DE NAVIGATION -->
       <div class="flex absolute -top-[64px] right-0">
         <div
           class="flex items-center justify-center h-16 w-16 bg-black hover:bg-very-dark-gray cursor-pointer"
@@ -126,6 +127,7 @@
           </svg>
         </div>
       </div>
+      <!-- TEXTE QUI BOUGE AVEC LA NAVIGATION  -->
       <div>
         <h2 class="pb-5">Discover innovative ways to decorate</h2>
 
@@ -136,7 +138,6 @@
           collection and make your property a reflection of you and what you
           love.
         </p>
-
         <button>
           <span class="pt-1">Shop now</span>
           <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -173,15 +174,31 @@
 
     <button>Shop now</button> -->
 
-    <h3>About our furniture</h3>
+    <div>
+      <img
+        class="w-full h-full object-cover"
+        src="./src/images/image-about-dark.jpg"
+        alt=""
+      />
 
-    <p>
-      Our multifunctional collection blends design and function to suit your
-      individual taste. Make each room unique, or pick a cohesive theme that
-      best express your interests and what inspires you. Find the furniture
-      pieces you need, from traditional to contemporary styles or anything in
-      between. Product specialists are available to help you create your dream
-      space.
-    </p>
+      <div class="py-14 px-10">
+        <h3 class="mb-5">About our furniture</h3>
+
+        <p>
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything
+          in between. Product specialists are available to help you create your
+          dream space.
+        </p>
+      </div>
+
+      <img
+        class="w-full h-full object-cover"
+        src="./src/images/image-about-light.jpg"
+        alt=""
+      />
+    </div>
   </body>
 </html>
