@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 h2 {
-  @apply text-4xl font-bold text-black;
+  @apply text-4xl font-bold text-black lg:text-[40px];
+}
+
+p {
+  @apply lg:text-[15px]  lg:leading-5;
 }
 
 h3 {
