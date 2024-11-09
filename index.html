@@ -17,14 +17,42 @@
       rel="stylesheet"
     />
 
+    <!-- Ajouter dans le head -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="./src/css/output.css" />
+    <style>
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease, left 0.3s ease;
+      }
+
+      nav ul li:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    </style>
   </head>
-  <body class="text-dark-gray font-spartan font-medium text-lg">
+  <body class="text-dark-gray font-spartan font-medium text-lg lg:h-[100vh]">
     <header
-      class="flex items-center justify-center text-white w-full px-10 py-10 absolute"
+      class="flex items-center justify-center text-white w-full px-10 py-10 absolute lg:z-50 lg:justify-start lg:gap-16 lg:left-1/2 lg:-translate-x-1/2 lg:max-w-[1820px]"
     >
       <svg
-        class="open-menu absolute left-10"
+        class="open-menu absolute left-10 lg:hidden"
         width="20"
         height="14"
         xmlns="http://www.w3.org/2000/svg"
@@ -38,10 +66,10 @@
 
       <img src="./src/images/logo.svg" alt="Room logo" />
       <nav
-        class="hidden absolute flex items-center justify-between z-10 px-10 left-0 py-10 w-full bg-white text-black font-bold"
+        class="lg:static lg:flex hidden absolute flex items-center justify-between z-10 px-10 left-0 py-10 w-full bg-white text-black font-bold lg:bg-transparent lg:px-0 lg:py-0 lg:w-auto lg:text-white lg:font-medium"
       >
         <svg
-          class="close-menu"
+          class="close-menu lg:hidden"
           width="16"
           height="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +81,7 @@
             opacity=".201"
           />
         </svg>
-        <ul class="flex items-center gap-7 *:pt-1">
+        <ul class="flex items-center gap-7 *:pt-1 lg:gap-10">
           <li><a href="#">Home</a></li>
           <li><a href="#">Shop</a></li>
           <li><a href="#">About</a></li>
@@ -62,121 +90,154 @@
       </nav>
     </header>
 
-    <div>
-      <picture>
-        <source
-          media="(min-width: 1024px)"
-          srcset="./src/images/desktop-image-hero-1.jpg"
-        />
-        <img
-          src="./src/images/mobile-image-hero-1.jpg"
-          alt="Hero image 1"
-          class="w-full h-full object-cover"
-        />
-      </picture>
-      <!-- <picture>
-        <source
-          media="(min-width: 1024px)"
-          srcset="./src/images/desktop-image-hero-2.jpg"
-        />
-        <img
-          src="./src/images/mobile-image-hero-2.jpg"
-          alt="Hero image 2"
-          class="w-full h-full object-cover"
-        />
-      </picture>
-
-      <picture>
-        <source
-          media="(min-width: 1024px)"
-          srcset="./src/images/desktop-image-hero-3.jpg"
-        />
-        <img
-          src="./src/images/mobile-image-hero-3.jpg"
-          alt="Hero image 3"
-          class="w-full h-full object-cover"
-        />
-      </picture> -->
-    </div>
-
-    <div class="relative py-14 px-10">
-      <!-- MODULE DE NAVIGATION -->
-      <div class="flex absolute -top-[64px] right-0">
-        <div
-          class="flex items-center justify-center h-16 w-16 bg-black hover:bg-very-dark-gray cursor-pointer"
-        >
-          <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 0L1 12l12 12"
-              stroke="#FFF"
-              fill="none"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-        <div
-          class="flex items-center justify-center h-16 w-16 bg-black hover:bg-very-dark-gray cursor-pointer"
-        >
-          <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M1 0l12 12L1 24"
-              stroke="#FFF"
-              fill="none"
-              fill-rule="evenodd"
-            />
-          </svg>
+    <div class="lg:flex lg:w-full">
+      <div class="swiper-container lg:overflow-hidden lg:basis-[60vw]">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="./src/images/desktop-image-hero-1.jpg"
+              />
+              <img
+                src="./src/images/mobile-image-hero-1.jpg"
+                alt="Hero image 1"
+                class="w-[100vw] h-full object-cover"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="./src/images/desktop-image-hero-2.jpg"
+              />
+              <img
+                src="./src/images/mobile-image-hero-2.jpg"
+                alt="Hero image 2"
+                class="w-[100vw] h-full object-cover"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcset="./src/images/desktop-image-hero-3.jpg"
+              />
+              <img
+                src="./src/images/mobile-image-hero-3.jpg"
+                alt="Hero image 3"
+                class="w-[100vw] h-full object-cover"
+              />
+            </picture>
+          </div>
         </div>
       </div>
-      <!-- TEXTE QUI BOUGE AVEC LA NAVIGATION  -->
-      <div>
-        <h2 class="pb-5">Discover innovative ways to decorate</h2>
 
-        <p class="pb-8">
-          We provide unmatched quality, comfort, and style for property owners
-          across the country. Our experts combine form and function in bringing
-          your vision to life. Create a room in your own style with our
-          collection and make your property a reflection of you and what you
-          love.
-        </p>
-        <button>
-          <span class="pt-1">Shop now</span>
-          <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
-              fill="currentColor"
-              fill-rule="nonzero"
-            />
-          </svg>
-        </button>
+      <div
+        class="relative py-14 px-10 lg:w-[40vw] lg:flex lg:items-center lg:px-28 lg:py-0"
+      >
+        <!-- MODULE DE NAVIGATION -->
+        <div
+          class="flex absolute -top-[64px] right-0 z-20 lg:bottom-0 lg:left-0 lg:top-auto"
+        >
+          <div
+            id="prev-btn"
+            class="flex items-center justify-center h-16 w-16 lg:w-20 lg:h-20 bg-black hover:bg-very-dark-gray cursor-pointer"
+          >
+            <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 0L1 12l12 12"
+                stroke="#FFF"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            id="next-btn"
+            class="flex items-center justify-center h-16 w-16 lg:w-20 lg:h-20 bg-black hover:bg-very-dark-gray cursor-pointer"
+          >
+            <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 0l12 12L1 24"
+                stroke="#FFF"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- TEXTE QUI BOUGE AVEC LA NAVIGATION  -->
+        <div id="text-1">
+          <h2 class="pb-5">Discover innovative ways to decorate</h2>
+
+          <p class="pb-8">
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life. Create a room in your own style with
+            our collection and make your property a reflection of you and what
+            you love.
+          </p>
+          <button>
+            <span class="pt-1">Shop now</span>
+            <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+        <div id="text-2" class="hidden">
+          <h2 class="pb-5">We are available all across the globe</h2>
+
+          <p class="pb-8">
+            With stores all over the world, it's easy for you to find furniture
+            for your home or place of business. Locally, we’re in most major
+            cities throughout the country. Find the branch nearest you using our
+            store locator. Any questions? Don't hesitate to contact us today.
+          </p>
+          <button>
+            <span class="pt-1">Shop now</span>
+            <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+        <div id="text-3" class="hidden">
+          <h2 class="pb-5">Manufactured with the best materials</h2>
+
+          <p class="pb-8">
+            Our modern furniture store provide a high level of quality. Our
+            company has invested in advanced technology to ensure that every
+            product is made as perfect and as consistent as possible. With three
+            decades of experience in this industry, we understand what customers
+            want for their home and office.
+          </p>
+          <button>
+            <span class="pt-1">Shop now</span>
+            <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- <h2>We are available all across the globe</h2>
-
-    <p>
-      With stores all over the world, it's easy for you to find furniture for
-      your home or place of business. Locally, we’re in most major cities
-      throughout the country. Find the branch nearest you using our store
-      locator. Any questions? Don't hesitate to contact us today.
-    </p>
-
-    <button>Shop now</button>
-
-    <h2>Manufactured with the best materials</h2>
-
-    <p>
-      Our modern furniture store provide a high level of quality. Our company
-      has invested in advanced technology to ensure that every product is made
-      as perfect and as consistent as possible. With three decades of experience
-      in this industry, we understand what customers want for their home and
-      office.
-    </p>
-
-    <button>Shop now</button> -->
-
-    <div>
+    <div class="lg:flex lg:h-fit">
       <img
-        class="w-full h-full object-cover"
+        class="w-full object-cover"
         src="./src/images/image-about-dark.jpg"
         alt=""
       />
@@ -195,10 +256,12 @@
       </div>
 
       <img
-        class="w-full h-full object-cover"
+        class="w-full object-cover"
         src="./src/images/image-about-light.jpg"
         alt=""
       />
     </div>
+
+    <script src="./src/js/index.js"></script>
   </body>
 </html>
